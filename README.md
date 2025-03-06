@@ -1,11 +1,11 @@
 # **Lampa**
 
 **Application of Structured State Space Models to High Energy Physics with Locality-Sensitive Hashing**
-🎉 *Accepted at AISTATS 2024* 🎉  
+ *Accepted at AISTATS 2024*   
 
 ---
 
-## 🚀 **Overview**  
+## **Overview**  
 
 - **Dataset**: Trained on **TrackML** (6-60k hits per event). Preprocessing codes modified from ([link](https://github.com/chengjiang123/Lampa/tree/main/data/preprocessing)).  
 - **Status**: Code for training in folder `src/`, format follows [HEPT](https://github.com/chengjiang123/Lampa/tree/main/HEPT).
