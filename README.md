@@ -9,7 +9,7 @@
 
 - **Dataset**: Trained on **TrackML** (6-60k hits per event). Preprocessing codes modified from ([link](https://github.com/chengjiang123/Lampa/tree/main/data/preprocessing)).  
 - **Status**: Code for training in folder `src/`, format follows [HEPT](https://github.com/chengjiang123/Lampa/tree/main/HEPT).
-- **Demo**: An example for lightweight pretrained Mamba-a model can be found in folder 'notebook/`. 
+- **Demo**: An example for lightweight pretrained Mamba-a model can be found in folder `notebook/`. 
 
 ---
 
