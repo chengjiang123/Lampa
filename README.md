@@ -16,9 +16,9 @@
  **Acknowledgments**
 We thank the **TrackML challenge** for providing the dataset and acknowledge the following papers that inspired this work:
 
-[1]**: [arXiv:2312.03823](https://arxiv.org/abs/2312.03823)
-[2]**: [arXiv:2402.12535](https://arxiv.org/abs/2402.12535)
-[3]**: [arXiv:2407.13925](https://arxiv.org/abs/2407.13925)
+**[1]**: [arXiv:2312.03823](https://arxiv.org/abs/2312.03823)
+**[2]**: [arXiv:2402.12535](https://arxiv.org/abs/2402.12535)
+**[3]**: [arXiv:2407.13925](https://arxiv.org/abs/2407.13925)
 
 
 ---
