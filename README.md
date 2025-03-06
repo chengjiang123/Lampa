@@ -7,7 +7,7 @@
  *Accepted at AISTATS 2024*   
 
 ---
-![Lampa](visuals/Lampa.pdf) 
+![Lampa](visual/Lampa.pdf) 
 
 
 ## **Overview**  
