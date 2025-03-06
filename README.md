@@ -1,9 +1,14 @@
 # **Lampa**
+[![arXiv](https://img.shields.io/badge/arXiv-2501.16237-b31b1b.svg)](https://arxiv.org/abs/2501.16237)
+[![python](https://img.shields.io/badge/-Python_3.9+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![pytorch](https://img.shields.io/badge/PyTorch_2.2+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 
 **Application of Structured State Space Models to High Energy Physics with Locality-Sensitive Hashing**
  *Accepted at AISTATS 2024*   
 
 ---
+![Lampa](visual/Lampa.pdf) 
+
 
 ## **Overview**  
 
