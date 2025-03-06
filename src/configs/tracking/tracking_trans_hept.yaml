@@ -1,0 +1,47 @@
+device: cuda:0
+note: "knn_hept_10k_pre_10_16-12_03_08.9284_trans_hept_42_knn_hept_10k_pre"
+seed: 42
+log_tensorboard: false
+num_threads: 5
+log_dir: 10_16-15_54_47.0047_trans_hept_42_knn_hept_10k_pre_10_16-12_03_08.9284_trans_hept_42_knn_hept_10k_pre
+
+# 150 if tracking-60k
+
+model_name: trans_hept
+model_kwargs:
+  block_size: 100
+  n_hashes: 3
+  num_regions: 60 
+  pe_type: none
+  num_heads: 8
+  h_dim: 48
+  n_layers: 4
+  num_w_per_dist: 10
+
+## default h_dim/n_layer : 24/4
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 2000
+batch_size: 1
+optimizer_kwargs:
+  lr: 1.0e-3  
+
+# 1.0e-2 if tracking-60k
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: tracking-10k
+main_metric: accuracy@0.9
+mode: max

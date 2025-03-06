@@ -1,0 +1,43 @@
+device: cuda:0
+note: "knn_15k_big"
+seed: 42
+log_tensorboard: false
+num_threads: 5
+log_dir: 10_25-00_05_18.0779_rwkv7_rwkv7_42_knn_15k
+
+
+
+model_name: rwkv7_rwkv7
+model_kwargs:
+  h_dim: 64
+  out_dim: 12
+  num_layers: 4
+  head_size_a: 16
+  head_size_divisor: 8
+  n_layers: 4
+  num_heads: 4
+
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 2000
+batch_size: 1
+optimizer_kwargs:
+  lr: 1.0e-3
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: tracking-15k
+main_metric: accuracy@0.9
+mode: max
