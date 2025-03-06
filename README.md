@@ -4,7 +4,7 @@
 [![pytorch](https://img.shields.io/badge/PyTorch_2.2+-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 
 **Application of Structured State Space Models to High Energy Physics with Locality-Sensitive Hashing**
- *Accepted at AISTATS 2024*   
+ *Accepted at AISTATS 2025*   
 
 ---
 ![Lampa](visual/Lampa.png) 
