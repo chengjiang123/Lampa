@@ -1,0 +1,46 @@
+device: cuda:0
+seed: 42
+log_tensorboard: false
+num_threads: 5
+note: "knn_gdlocal1_record"
+
+model_name: gdlocal1_gdlocal1
+model_kwargs:
+  out_dim: 12
+  drop_out: 0.1
+  drop_out_in_block: 0.0
+  drop_path: 0.0
+  h_dim: 48
+  n_hashes: 3
+  n_layers: 4
+  num_heads: 6
+  head_size: 16
+  num_regions: 120
+  block_size: 100
+  rms_norm: false
+  mlp_layers: 4
+
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 2000
+batch_size: 1
+optimizer_kwargs:
+  lr: 5.0e-5
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: tracking-3k
+main_metric: accuracy@0.9
+mode: max

@@ -1,0 +1,33 @@
+device: cuda:0
+note: "reg_mhaformer_large_10k"
+seed: 42
+log_tensorboard: false
+num_threads: 5
+
+
+model_name: regtrans_mhaformer
+model_kwargs:
+  pe_type: none
+  num_heads: 8
+  h_dim: 128
+  n_layers: 3
+  num_w_per_dist: 10
+
+
+
+optimizer_name: adam
+num_epochs: 1000
+batch_size: 32
+optimizer_kwargs:
+  lr: 1.0e-3
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: regression-10k
+

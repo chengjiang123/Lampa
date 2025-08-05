@@ -1,0 +1,53 @@
+device: cuda:0
+note: "hept_15k_record"
+seed: 42
+log_tensorboard: false
+num_threads: 5
+
+
+
+
+#20 if tracking-3k 120  if tracking-15k 150 if tracking-60k
+
+model_name: trans_hept
+model_kwargs:
+  block_size: 100
+  n_hashes: 3
+  #num_regions: 20 
+  num_regions: 100 
+  pe_type: none
+  num_heads: 8
+  h_dim: 32
+  n_layers: 4
+  num_w_per_dist: 10
+  #freeze_encoder: false
+  #freeze_head: false
+  #freeze_attn: true
+
+## default h_dim/n_layer : 24/4
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 1000
+batch_size: 1
+optimizer_kwargs:
+  lr: 1.0e-3  
+
+# 1.0e-2 if tracking-60k
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: tracking-15k
+main_metric: accuracy@0.9
+mode: max

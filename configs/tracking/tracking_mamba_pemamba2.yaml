@@ -1,0 +1,55 @@
+device: cuda:0
+seed: 42
+log_tensorboard: false
+num_threads: 1
+note: "pemamba2_3k_record"
+
+
+
+#num_slices_per_axis 20 30 for low, 100 150 for high
+model_name: pemamba2_pemamba2
+model_kwargs:
+  out_dim: 12
+  n_layers: 3
+  drop_out: 0.1
+  drop_out_in_block: 0.0
+  drop_path: 0.0
+  h_dim: 64
+  d_state: 16
+  headdim: 16
+  n_hashes: 3
+  num_heads: 8
+  num_regions: 140
+  num_w_per_dist: 10
+  mlp_layers: 4
+  block_size: 100
+  pe_type: learned
+  num_slices_per_axis: 20
+  group_size: 200
+  B: 1000
+
+
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 1000
+batch_size: 1
+optimizer_kwargs:
+  lr: 1.0e-3
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: tracking-3k
+main_metric: accuracy@0.9
+mode: max

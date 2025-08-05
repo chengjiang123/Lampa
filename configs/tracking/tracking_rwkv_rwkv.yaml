@@ -1,0 +1,43 @@
+device: cuda:0
+note: "knn_purerwkv3k_record"
+seed: 42
+log_tensorboard: false
+num_threads: 5
+
+
+
+model_name: rwkv_rwkv
+model_kwargs:
+  h_dim: 128
+  out_dim: 12
+  #n_mixedattn_layers: 2
+  head_size_a: 16
+  head_size_divisor: 8
+  n_layers: 4
+  num_heads: 4
+
+
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 2000
+batch_size: 1
+optimizer_kwargs:
+  lr: 1.0e-4
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: tracking-15k
+main_metric: accuracy@0.9
+mode: max

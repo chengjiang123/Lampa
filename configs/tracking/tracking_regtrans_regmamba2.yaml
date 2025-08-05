@@ -1,0 +1,42 @@
+device: cuda:0
+seed: 42
+log_tensorboard: false
+num_threads: 1
+note: "reg_fullmamba2_10k"
+
+
+model_name: regmamba2_regmamba2
+model_kwargs:
+  out_dim: 12
+  n_layers: 4
+  drop_out: 0.1
+  drop_out_in_block: 0.0
+  drop_path: 0.0
+  h_dim: 128
+  n_hashes: 3
+  n_layers: 12
+  num_group: 243
+  num_heads: 8
+  num_regions: 20
+  num_w_per_dist: 10
+  mlp_layers: 4
+  block_size: 100
+  use_mem_eff_path: true
+
+
+
+optimizer_name: adam
+num_epochs: 1000
+batch_size: 32
+optimizer_kwargs:
+  lr: 1.0e-3
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: regression-10k

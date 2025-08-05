@@ -1,0 +1,52 @@
+device: cuda:0
+seed: 42
+log_tensorboard: false
+num_threads: 5
+note: "hmamba_15k_record"
+
+model_name: hmambav2_hmambav2
+model_kwargs:
+  out_dim: 12
+  n_layers: 6
+  drop_out: 0.1
+  drop_out_in_block: 0.0
+  drop_path: 0.0
+  encoder_dim: 96
+  group_size: 24
+  h_dim: 96
+  n_hashes: 3
+  n_layers: 6
+  num_group: 243
+  num_heads: 8
+  num_regions: 300
+  num_w_per_dist: 10
+  block_size: 100
+  pe_type: none
+  rms_norm: false
+  trans_dim: 192
+  bucket_size: 100
+
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 1000
+batch_size: 1
+optimizer_kwargs:
+  lr: 2.0e-4
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 400
+
+
+data_dir: ../data/
+dataset_name: tracking-15k
+main_metric: accuracy@0.9
+mode: max

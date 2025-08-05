@@ -1,0 +1,48 @@
+device: cuda:0
+seed: 42
+log_tensorboard: false
+num_threads: 1
+note: "puremamba_15k_record"
+
+
+model_name: mamba_mamba
+model_kwargs:
+  drop_out: 0.1
+  drop_out_in_block: 0.0
+  drop_path: 0.0
+  encoder_dim: 96
+  group_size: 24
+  h_dim: 96
+  mlp_layers: 3
+  n_layers: 4
+  num_group: 243
+  num_heads: 8
+  num_w_per_dist: 10
+  rms_norm: false
+  trans_dim: 192
+
+## n_layer = 12
+
+loss_name: knninfonce
+loss_kwargs:
+  dist_metric: l2_rbf
+  tau: 0.05
+
+
+optimizer_name: adam
+num_epochs: 2500
+batch_size: 1
+optimizer_kwargs:
+  lr: 1.0e-4
+
+
+lr_scheduler_name: step
+lr_scheduler_kwargs:
+  gamma: 0.5
+  step_size: 500
+
+
+data_dir: ../data/
+dataset_name: tracking-15k
+main_metric: accuracy@0.9
+mode: max
