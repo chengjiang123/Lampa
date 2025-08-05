@@ -20,7 +20,7 @@ This repository implements state-of-the-art linear-complexity architectures for 
 |-------------------|---------------------------------------|-----------------|
 | `dgcnn`, `gravnet`| DGCNN/GravNet                         | [Dynamic Graph CNN (arXiv:1801.07829)](https://arxiv.org/abs/1801.07829) |
 | `rwkv`,`rwkv7`    | RWKV/RWKV7                            | [RWKV (arXiv:2305.13048)](https://arxiv.org/abs/2305.13048) |
-| `hept`            | HEPT                                  | [Linear Attention Sequence Parallelism (arXiv:2402.12535)](https://arxiv.org/abs/2402.12535) |
+| `hept`            | HEPT                                  | [LSH-Based Efficient Point Transformer (arXiv:2402.12535)](https://arxiv.org/abs/2402.12535) |
 | `flatformer`      | FlatFormer                            | [Flattened Window Attention (arXiv:2301.08739)](https://arxiv.org/abs/2301.08739) |
 | `fullmamba2` | Mamba                           | [Mamba (arXiv:2312.00752)](https://arxiv.org/abs/2312.00752)|
 | `gatedelta`       | Gated DeltaNet                        | [Gated DeltaNet (arXiv:2412.06464)](https://arxiv.org/abs/2412.06464) |
